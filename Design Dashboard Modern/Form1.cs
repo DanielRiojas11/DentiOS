@@ -146,5 +146,14 @@ namespace Design_Dashboard_Modern
             panelA.Show();
         }
 
+        private void ButtonAddDeuda_Click(object sender, EventArgs e)
+        {
+            AddAdeudo addAdeudo = new AddAdeudo();
+            addAdeudo.Owner = this;
+            buttonAddDeuda.Enabled = false;
+            addAdeudo.Show();
+
+
+        }
     }
 }
