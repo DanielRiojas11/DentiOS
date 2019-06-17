@@ -17,6 +17,7 @@ namespace Design_Dashboard_Modern
             InitializeComponent();
             PanelHis.Hide();
             panelA.Hide();
+            panelConsults.Hide();
         }
 
 
@@ -144,6 +145,7 @@ namespace Design_Dashboard_Modern
         private void AdeudosButton_Click(object sender, EventArgs e)
         {
             panelA.Show();
+            panelConsults.Hide();
         }
 
         private void ButtonAddDeuda_Click(object sender, EventArgs e)
@@ -154,6 +156,27 @@ namespace Design_Dashboard_Modern
             addAdeudo.Show();
 
 
+        }
+
+        private void ButtonAddConsult_Click(object sender, EventArgs e)
+        {
+            AddConsult addConsult = new AddConsult();
+            addConsult.Owner = this;
+            buttonAddConsult.Enabled = false;
+            addConsult.Show();
+        }
+
+        private void ConsultasButton_Click(object sender, EventArgs e)
+        {
+            panelConsults.Show();
+        }
+
+        private void NewPatientButton_Click(object sender, EventArgs e)
+        {
+            AddPatient addPatient = new AddPatient();
+            addPatient.Owner = this;
+            NewPatientButton.Enabled = false;
+            addPatient.Show();
         }
     }
 }

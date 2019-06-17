@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation10 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation9 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
             this.PanelTop = new System.Windows.Forms.Panel();
             this.PanelHome = new System.Windows.Forms.Panel();
             this.labelHome = new System.Windows.Forms.Label();
@@ -57,14 +57,17 @@
             this.panelh = new System.Windows.Forms.Panel();
             this.PanelHis = new System.Windows.Forms.Panel();
             this.panelA = new System.Windows.Forms.Panel();
+            this.panelConsults = new System.Windows.Forms.Panel();
+            this.buttonAddConsult = new System.Windows.Forms.Button();
+            this.dataGridViewConsults = new System.Windows.Forms.DataGridView();
+            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCause = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColObserv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAddDeuda = new System.Windows.Forms.Button();
             this.dataGridViewAdeudos = new System.Windows.Forms.DataGridView();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tratment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labeAlerts = new System.Windows.Forms.Label();
             this.labelRecomended = new System.Windows.Forms.Label();
             this.labelTelefono = new System.Windows.Forms.Label();
-            this.labelEdad = new System.Windows.Forms.Label();
             this.labelEtiology = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.LabelName = new System.Windows.Forms.Label();
@@ -73,7 +76,6 @@
             this.Etiology = new System.Windows.Forms.TextBox();
             this.recomended = new System.Windows.Forms.TextBox();
             this.Phone = new System.Windows.Forms.TextBox();
-            this.Edad = new System.Windows.Forms.TextBox();
             this.NameBar = new System.Windows.Forms.TextBox();
             this.NewPatientButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -83,7 +85,14 @@
             this.bunifuTransition2 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.MoverSashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipseSearchPatients = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.buttonAddDeuda = new System.Windows.Forms.Button();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tratment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelRFC = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxRFC = new System.Windows.Forms.TextBox();
+            this.textBoxEMail = new System.Windows.Forms.TextBox();
             this.PanelTop.SuspendLayout();
             this.PanelHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaximizeButton)).BeginInit();
@@ -98,6 +107,8 @@
             this.panelh.SuspendLayout();
             this.PanelHis.SuspendLayout();
             this.panelA.SuspendLayout();
+            this.panelConsults.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdeudos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -316,6 +327,7 @@
             this.ConsultasButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ConsultasButton.Textcolor = System.Drawing.Color.White;
             this.ConsultasButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultasButton.Click += new System.EventHandler(this.ConsultasButton_Click);
             // 
             // AdeudosButton
             // 
@@ -516,7 +528,6 @@
             this.PanelHis.Controls.Add(this.labeAlerts);
             this.PanelHis.Controls.Add(this.labelRecomended);
             this.PanelHis.Controls.Add(this.labelTelefono);
-            this.PanelHis.Controls.Add(this.labelEdad);
             this.PanelHis.Controls.Add(this.labelEtiology);
             this.PanelHis.Controls.Add(this.labelFecha);
             this.PanelHis.Controls.Add(this.LabelName);
@@ -525,29 +536,101 @@
             this.PanelHis.Controls.Add(this.Etiology);
             this.PanelHis.Controls.Add(this.recomended);
             this.PanelHis.Controls.Add(this.Phone);
-            this.PanelHis.Controls.Add(this.Edad);
             this.PanelHis.Controls.Add(this.NameBar);
+            this.PanelHis.Controls.Add(this.textBoxRFC);
+            this.PanelHis.Controls.Add(this.textBoxEMail);
+            this.PanelHis.Controls.Add(this.label2);
+            this.PanelHis.Controls.Add(this.labelRFC);
             this.bunifuTransition2.SetDecoration(this.PanelHis, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.PanelHis, BunifuAnimatorNS.DecorationType.None);
-            this.PanelHis.Location = new System.Drawing.Point(0, 0);
+            this.PanelHis.Location = new System.Drawing.Point(0, 388);
             this.PanelHis.Name = "PanelHis";
-            this.PanelHis.Size = new System.Drawing.Size(1000, 532);
+            this.PanelHis.Size = new System.Drawing.Size(1000, 144);
             this.PanelHis.TabIndex = 12;
             this.PanelHis.Paint += new System.Windows.Forms.PaintEventHandler(this.Panelhis_Paint);
             // 
             // panelA
             // 
             this.panelA.BackColor = System.Drawing.Color.Violet;
+            this.panelA.Controls.Add(this.panelConsults);
             this.panelA.Controls.Add(this.buttonAddDeuda);
             this.panelA.Controls.Add(this.dataGridViewAdeudos);
             this.bunifuTransition2.SetDecoration(this.panelA, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.panelA, BunifuAnimatorNS.DecorationType.None);
-            this.panelA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelA.Location = new System.Drawing.Point(0, 0);
+            this.panelA.Location = new System.Drawing.Point(0, 362);
             this.panelA.Name = "panelA";
-            this.panelA.Size = new System.Drawing.Size(1000, 532);
+            this.panelA.Size = new System.Drawing.Size(1000, 170);
             this.panelA.TabIndex = 16;
             this.panelA.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelA_Paint);
+            // 
+            // panelConsults
+            // 
+            this.panelConsults.BackColor = System.Drawing.Color.Indigo;
+            this.panelConsults.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelConsults.Controls.Add(this.buttonAddConsult);
+            this.panelConsults.Controls.Add(this.dataGridViewConsults);
+            this.bunifuTransition2.SetDecoration(this.panelConsults, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.panelConsults, BunifuAnimatorNS.DecorationType.None);
+            this.panelConsults.Location = new System.Drawing.Point(0, 307);
+            this.panelConsults.Name = "panelConsults";
+            this.panelConsults.Size = new System.Drawing.Size(1000, 225);
+            this.panelConsults.TabIndex = 2;
+            // 
+            // buttonAddConsult
+            // 
+            this.bunifuTransition1.SetDecoration(this.buttonAddConsult, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.buttonAddConsult, BunifuAnimatorNS.DecorationType.None);
+            this.buttonAddConsult.Location = new System.Drawing.Point(677, 375);
+            this.buttonAddConsult.Name = "buttonAddConsult";
+            this.buttonAddConsult.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddConsult.TabIndex = 1;
+            this.buttonAddConsult.Text = "Agregar";
+            this.buttonAddConsult.UseVisualStyleBackColor = true;
+            this.buttonAddConsult.Click += new System.EventHandler(this.ButtonAddConsult_Click);
+            // 
+            // dataGridViewConsults
+            // 
+            this.dataGridViewConsults.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridViewConsults.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewConsults.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridViewConsults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewConsults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColDate,
+            this.ColCause,
+            this.ColObserv});
+            this.bunifuTransition2.SetDecoration(this.dataGridViewConsults, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.dataGridViewConsults, BunifuAnimatorNS.DecorationType.None);
+            this.dataGridViewConsults.Location = new System.Drawing.Point(406, 20);
+            this.dataGridViewConsults.Name = "dataGridViewConsults";
+            this.dataGridViewConsults.Size = new System.Drawing.Size(346, 334);
+            this.dataGridViewConsults.TabIndex = 0;
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "Fecha";
+            this.ColDate.Name = "ColDate";
+            // 
+            // ColCause
+            // 
+            this.ColCause.HeaderText = "Motivo de Consulta";
+            this.ColCause.Name = "ColCause";
+            // 
+            // ColObserv
+            // 
+            this.ColObserv.HeaderText = "Observaciones";
+            this.ColObserv.Name = "ColObserv";
+            // 
+            // buttonAddDeuda
+            // 
+            this.bunifuTransition1.SetDecoration(this.buttonAddDeuda, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.buttonAddDeuda, BunifuAnimatorNS.DecorationType.None);
+            this.buttonAddDeuda.Location = new System.Drawing.Point(701, 449);
+            this.buttonAddDeuda.Name = "buttonAddDeuda";
+            this.buttonAddDeuda.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddDeuda.TabIndex = 1;
+            this.buttonAddDeuda.Text = "Agregar";
+            this.buttonAddDeuda.UseVisualStyleBackColor = true;
+            this.buttonAddDeuda.Click += new System.EventHandler(this.ButtonAddDeuda_Click);
             // 
             // dataGridViewAdeudos
             // 
@@ -558,28 +641,14 @@
             this.dataGridViewAdeudos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Date,
             this.Payment,
-            this.Tratment});
+            this.Tratment,
+            this.PaymentType});
             this.bunifuTransition2.SetDecoration(this.dataGridViewAdeudos, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.dataGridViewAdeudos, BunifuAnimatorNS.DecorationType.None);
-            this.dataGridViewAdeudos.Location = new System.Drawing.Point(420, 20);
+            this.dataGridViewAdeudos.Location = new System.Drawing.Point(367, 26);
             this.dataGridViewAdeudos.Name = "dataGridViewAdeudos";
-            this.dataGridViewAdeudos.Size = new System.Drawing.Size(366, 320);
+            this.dataGridViewAdeudos.Size = new System.Drawing.Size(409, 55);
             this.dataGridViewAdeudos.TabIndex = 0;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Fecha";
-            this.Date.Name = "Date";
-            // 
-            // Payment
-            // 
-            this.Payment.HeaderText = "Pago";
-            this.Payment.Name = "Payment";
-            // 
-            // Tratment
-            // 
-            this.Tratment.HeaderText = "Tratamiento";
-            this.Tratment.Name = "Tratment";
             // 
             // labeAlerts
             // 
@@ -588,7 +657,7 @@
             this.bunifuTransition2.SetDecoration(this.labeAlerts, BunifuAnimatorNS.DecorationType.None);
             this.labeAlerts.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeAlerts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labeAlerts.Location = new System.Drawing.Point(289, 334);
+            this.labeAlerts.Location = new System.Drawing.Point(289, 385);
             this.labeAlerts.Name = "labeAlerts";
             this.labeAlerts.Size = new System.Drawing.Size(125, 20);
             this.labeAlerts.TabIndex = 15;
@@ -619,19 +688,6 @@
             this.labelTelefono.Size = new System.Drawing.Size(74, 20);
             this.labelTelefono.TabIndex = 13;
             this.labelTelefono.Text = "Telefono";
-            // 
-            // labelEdad
-            // 
-            this.labelEdad.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.labelEdad, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.labelEdad, BunifuAnimatorNS.DecorationType.None);
-            this.labelEdad.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEdad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelEdad.Location = new System.Drawing.Point(369, 118);
-            this.labelEdad.Name = "labelEdad";
-            this.labelEdad.Size = new System.Drawing.Size(45, 20);
-            this.labelEdad.TabIndex = 12;
-            this.labelEdad.Text = "Edad";
             // 
             // labelEtiology
             // 
@@ -689,7 +745,7 @@
             // 
             this.bunifuTransition1.SetDecoration(this.MedicAlerts, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.MedicAlerts, BunifuAnimatorNS.DecorationType.None);
-            this.MedicAlerts.Location = new System.Drawing.Point(420, 334);
+            this.MedicAlerts.Location = new System.Drawing.Point(420, 388);
             this.MedicAlerts.Name = "MedicAlerts";
             this.MedicAlerts.Size = new System.Drawing.Size(518, 20);
             this.MedicAlerts.TabIndex = 6;
@@ -721,18 +777,6 @@
             this.Phone.Size = new System.Drawing.Size(100, 20);
             this.Phone.TabIndex = 3;
             // 
-            // Edad
-            // 
-            this.Edad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuTransition1.SetDecoration(this.Edad, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.Edad, BunifuAnimatorNS.DecorationType.None);
-            this.Edad.Location = new System.Drawing.Point(420, 118);
-            this.Edad.Name = "Edad";
-            this.Edad.Size = new System.Drawing.Size(39, 20);
-            this.Edad.TabIndex = 1;
-            // 
             // NameBar
             // 
             this.NameBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -751,7 +795,7 @@
             this.NewPatientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NewPatientButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.NewPatientButton.BackColor = System.Drawing.Color.Transparent;
             this.NewPatientButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.NewPatientButton.BorderRadius = 5;
             this.NewPatientButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -785,6 +829,7 @@
             this.NewPatientButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.NewPatientButton.Textcolor = System.Drawing.Color.White;
             this.NewPatientButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPatientButton.Click += new System.EventHandler(this.NewPatientButton_Click);
             // 
             // pictureBox1
             // 
@@ -831,43 +876,43 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.bunifuTransition1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 1;
-            animation3.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 2F;
-            animation3.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation3;
+            animation10.AnimateOnlyDifferences = true;
+            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
+            animation10.LeafCoeff = 0F;
+            animation10.MaxTime = 1F;
+            animation10.MinTime = 0F;
+            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
+            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
+            animation10.MosaicSize = 1;
+            animation10.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation10.RotateCoeff = 0F;
+            animation10.RotateLimit = 0F;
+            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
+            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
+            animation10.TimeCoeff = 2F;
+            animation10.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation10;
             // 
             // bunifuTransition2
             // 
             this.bunifuTransition2.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunifuTransition2.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.bunifuTransition2.DefaultAnimation = animation4;
+            animation9.AnimateOnlyDifferences = true;
+            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
+            animation9.LeafCoeff = 0F;
+            animation9.MaxTime = 1F;
+            animation9.MinTime = 0F;
+            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
+            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
+            animation9.MosaicSize = 0;
+            animation9.Padding = new System.Windows.Forms.Padding(0);
+            animation9.RotateCoeff = 0F;
+            animation9.RotateLimit = 0F;
+            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
+            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
+            animation9.TimeCoeff = 0F;
+            animation9.TransparencyCoeff = 0F;
+            this.bunifuTransition2.DefaultAnimation = animation9;
             // 
             // MoverSashboard
             // 
@@ -881,17 +926,81 @@
             this.bunifuElipseSearchPatients.ElipseRadius = 5;
             this.bunifuElipseSearchPatients.TargetControl = this.BuscadorClientes;
             // 
-            // buttonAddDeuda
+            // Date
             // 
-            this.bunifuTransition1.SetDecoration(this.buttonAddDeuda, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.buttonAddDeuda, BunifuAnimatorNS.DecorationType.None);
-            this.buttonAddDeuda.Location = new System.Drawing.Point(711, 346);
-            this.buttonAddDeuda.Name = "buttonAddDeuda";
-            this.buttonAddDeuda.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddDeuda.TabIndex = 1;
-            this.buttonAddDeuda.Text = "Agregar";
-            this.buttonAddDeuda.UseVisualStyleBackColor = true;
-            this.buttonAddDeuda.Click += new System.EventHandler(this.ButtonAddDeuda_Click);
+            this.Date.HeaderText = "Fecha";
+            this.Date.Name = "Date";
+            // 
+            // Payment
+            // 
+            this.Payment.HeaderText = "Pago";
+            this.Payment.Name = "Payment";
+            // 
+            // Tratment
+            // 
+            this.Tratment.HeaderText = "Tratamiento";
+            this.Tratment.Name = "Tratment";
+            // 
+            // PaymentType
+            // 
+            this.PaymentType.HeaderText = "Forma de Pago";
+            this.PaymentType.Name = "PaymentType";
+            // 
+            // labelRFC
+            // 
+            this.labelRFC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelRFC.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.labelRFC, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.labelRFC, BunifuAnimatorNS.DecorationType.None);
+            this.labelRFC.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRFC.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelRFC.Location = new System.Drawing.Point(377, 118);
+            this.labelRFC.Name = "labelRFC";
+            this.labelRFC.Size = new System.Drawing.Size(37, 20);
+            this.labelRFC.TabIndex = 17;
+            this.labelRFC.Text = "RFC";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(363, 334);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 20);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Email";
+            // 
+            // textBoxRFC
+            // 
+            this.textBoxRFC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuTransition1.SetDecoration(this.textBoxRFC, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.textBoxRFC, BunifuAnimatorNS.DecorationType.None);
+            this.textBoxRFC.Location = new System.Drawing.Point(420, 120);
+            this.textBoxRFC.Name = "textBoxRFC";
+            this.textBoxRFC.Size = new System.Drawing.Size(157, 20);
+            this.textBoxRFC.TabIndex = 19;
+            // 
+            // textBoxEMail
+            // 
+            this.textBoxEMail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuTransition1.SetDecoration(this.textBoxEMail, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.textBoxEMail, BunifuAnimatorNS.DecorationType.None);
+            this.textBoxEMail.Location = new System.Drawing.Point(420, 336);
+            this.textBoxEMail.Name = "textBoxEMail";
+            this.textBoxEMail.Size = new System.Drawing.Size(309, 20);
+            this.textBoxEMail.TabIndex = 20;
             // 
             // Form1
             // 
@@ -928,6 +1037,8 @@
             this.PanelHis.ResumeLayout(false);
             this.PanelHis.PerformLayout();
             this.panelA.ResumeLayout(false);
+            this.panelConsults.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdeudos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -965,29 +1076,38 @@
         private System.Windows.Forms.Panel panelh;
         private System.Windows.Forms.TextBox BuscadorClientes;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuFlatButton NewPatientButton;
+        public Bunifu.Framework.UI.BunifuFlatButton NewPatientButton;
         private System.Windows.Forms.Panel PanelHis;
         private System.Windows.Forms.TextBox MedicAlerts;
         private System.Windows.Forms.TextBox Etiology;
         private System.Windows.Forms.TextBox recomended;
         private System.Windows.Forms.TextBox Phone;
-        private System.Windows.Forms.TextBox Edad;
         private System.Windows.Forms.TextBox NameBar;
         private System.Windows.Forms.DateTimePicker Fecha;
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.Label labeAlerts;
         private System.Windows.Forms.Label labelRecomended;
         private System.Windows.Forms.Label labelTelefono;
-        private System.Windows.Forms.Label labelEdad;
         private System.Windows.Forms.Label labelEtiology;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Panel panelA;
         private System.Windows.Forms.DataGridView dataGridViewAdeudos;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipseSearchPatients;
+        public System.Windows.Forms.Button buttonAddDeuda;
+        private System.Windows.Forms.Panel panelConsults;
+        public System.Windows.Forms.Button buttonAddConsult;
+        private System.Windows.Forms.DataGridView dataGridViewConsults;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColCause;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColObserv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Payment;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tratment;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipseSearchPatients;
-        public System.Windows.Forms.Button buttonAddDeuda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentType;
+        private System.Windows.Forms.TextBox textBoxRFC;
+        private System.Windows.Forms.TextBox textBoxEMail;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelRFC;
     }
 }
 

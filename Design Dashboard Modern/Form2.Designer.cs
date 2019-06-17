@@ -30,15 +30,15 @@
         {
             this.panelTopAddA = new System.Windows.Forms.Panel();
             this.panelMainAddA = new System.Windows.Forms.Panel();
-            this.labelDate = new System.Windows.Forms.Label();
-            this.labelPayment = new System.Windows.Forms.Label();
-            this.labelTrat = new System.Windows.Forms.Label();
-            this.textBoxDate = new System.Windows.Forms.TextBox();
-            this.textBoxPayment = new System.Windows.Forms.TextBox();
-            this.textBoxTrat = new System.Windows.Forms.TextBox();
-            this.radioButtonCash = new System.Windows.Forms.RadioButton();
-            this.radioButtonTarget = new System.Windows.Forms.RadioButton();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.radioButtonTarget = new System.Windows.Forms.RadioButton();
+            this.radioButtonCash = new System.Windows.Forms.RadioButton();
+            this.textBoxTrat = new System.Windows.Forms.TextBox();
+            this.textBoxPayment = new System.Windows.Forms.TextBox();
+            this.textBoxDate = new System.Windows.Forms.TextBox();
+            this.labelTrat = new System.Windows.Forms.Label();
+            this.labelPayment = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
             this.panelMainAddA.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,66 +69,15 @@
             this.panelMainAddA.TabIndex = 1;
             this.panelMainAddA.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMainAddA_Paint);
             // 
-            // labelDate
+            // buttonAdd
             // 
-            this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(36, 15);
-            this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(37, 13);
-            this.labelDate.TabIndex = 0;
-            this.labelDate.Text = "Fecha";
-            this.labelDate.Click += new System.EventHandler(this.LabelDate_Click);
-            // 
-            // labelPayment
-            // 
-            this.labelPayment.AutoSize = true;
-            this.labelPayment.Location = new System.Drawing.Point(36, 73);
-            this.labelPayment.Name = "labelPayment";
-            this.labelPayment.Size = new System.Drawing.Size(32, 13);
-            this.labelPayment.TabIndex = 1;
-            this.labelPayment.Text = "Pago";
-            // 
-            // labelTrat
-            // 
-            this.labelTrat.AutoSize = true;
-            this.labelTrat.Location = new System.Drawing.Point(36, 139);
-            this.labelTrat.Name = "labelTrat";
-            this.labelTrat.Size = new System.Drawing.Size(63, 13);
-            this.labelTrat.TabIndex = 2;
-            this.labelTrat.Text = "Tratamiento";
-            // 
-            // textBoxDate
-            // 
-            this.textBoxDate.Location = new System.Drawing.Point(79, 12);
-            this.textBoxDate.Name = "textBoxDate";
-            this.textBoxDate.Size = new System.Drawing.Size(183, 20);
-            this.textBoxDate.TabIndex = 3;
-            this.textBoxDate.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-            // 
-            // textBoxPayment
-            // 
-            this.textBoxPayment.Location = new System.Drawing.Point(74, 70);
-            this.textBoxPayment.Name = "textBoxPayment";
-            this.textBoxPayment.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPayment.TabIndex = 4;
-            // 
-            // textBoxTrat
-            // 
-            this.textBoxTrat.Location = new System.Drawing.Point(123, 136);
-            this.textBoxTrat.Name = "textBoxTrat";
-            this.textBoxTrat.Size = new System.Drawing.Size(139, 20);
-            this.textBoxTrat.TabIndex = 5;
-            // 
-            // radioButtonCash
-            // 
-            this.radioButtonCash.AutoSize = true;
-            this.radioButtonCash.Location = new System.Drawing.Point(193, 55);
-            this.radioButtonCash.Name = "radioButtonCash";
-            this.radioButtonCash.Size = new System.Drawing.Size(64, 17);
-            this.radioButtonCash.TabIndex = 6;
-            this.radioButtonCash.TabStop = true;
-            this.radioButtonCash.Text = "Efectivo";
-            this.radioButtonCash.UseVisualStyleBackColor = true;
+            this.buttonAdd.Location = new System.Drawing.Point(231, 197);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 8;
+            this.buttonAdd.Text = "Listo";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // radioButtonTarget
             // 
@@ -142,15 +91,66 @@
             this.radioButtonTarget.UseVisualStyleBackColor = true;
             this.radioButtonTarget.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
             // 
-            // buttonAdd
+            // radioButtonCash
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(231, 197);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 8;
-            this.buttonAdd.Text = "Listo";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            this.radioButtonCash.AutoSize = true;
+            this.radioButtonCash.Location = new System.Drawing.Point(193, 55);
+            this.radioButtonCash.Name = "radioButtonCash";
+            this.radioButtonCash.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonCash.TabIndex = 6;
+            this.radioButtonCash.TabStop = true;
+            this.radioButtonCash.Text = "Efectivo";
+            this.radioButtonCash.UseVisualStyleBackColor = true;
+            // 
+            // textBoxTrat
+            // 
+            this.textBoxTrat.Location = new System.Drawing.Point(123, 136);
+            this.textBoxTrat.Name = "textBoxTrat";
+            this.textBoxTrat.Size = new System.Drawing.Size(139, 20);
+            this.textBoxTrat.TabIndex = 5;
+            // 
+            // textBoxPayment
+            // 
+            this.textBoxPayment.Location = new System.Drawing.Point(74, 70);
+            this.textBoxPayment.Name = "textBoxPayment";
+            this.textBoxPayment.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPayment.TabIndex = 4;
+            // 
+            // textBoxDate
+            // 
+            this.textBoxDate.Location = new System.Drawing.Point(79, 12);
+            this.textBoxDate.Name = "textBoxDate";
+            this.textBoxDate.Size = new System.Drawing.Size(183, 20);
+            this.textBoxDate.TabIndex = 3;
+            this.textBoxDate.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // labelTrat
+            // 
+            this.labelTrat.AutoSize = true;
+            this.labelTrat.Location = new System.Drawing.Point(36, 139);
+            this.labelTrat.Name = "labelTrat";
+            this.labelTrat.Size = new System.Drawing.Size(63, 13);
+            this.labelTrat.TabIndex = 2;
+            this.labelTrat.Text = "Tratamiento";
+            // 
+            // labelPayment
+            // 
+            this.labelPayment.AutoSize = true;
+            this.labelPayment.Location = new System.Drawing.Point(36, 73);
+            this.labelPayment.Name = "labelPayment";
+            this.labelPayment.Size = new System.Drawing.Size(32, 13);
+            this.labelPayment.TabIndex = 1;
+            this.labelPayment.Text = "Pago";
+            // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Location = new System.Drawing.Point(36, 15);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(37, 13);
+            this.labelDate.TabIndex = 0;
+            this.labelDate.Text = "Fecha";
+            this.labelDate.Click += new System.EventHandler(this.LabelDate_Click);
             // 
             // AddAdeudo
             // 
