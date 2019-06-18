@@ -12,12 +12,11 @@ namespace Design_Dashboard_Modern
 {
     public partial class Form1 : Form
     {
+        List<Panel> listPanel = new List<Panel>();
+
         public Form1()
         {
             InitializeComponent();
-            PanelHis.Hide();
-            panelA.Hide();
-            panelConsults.Hide();
         }
 
 
@@ -28,7 +27,14 @@ namespace Design_Dashboard_Modern
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            listPanel.Add(panelh);
+            listPanel.Add(PanelHis);
+            listPanel.Add(panelA);
+            listPanel.Add(panelConsults);
+            listPanel[0].Visible = true;
+            listPanel[1].Visible = false;
+            listPanel[2].Visible = false;
+            listPanel[3].Visible = false;
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -72,8 +78,10 @@ namespace Design_Dashboard_Modern
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
-            PanelHis.Hide();
-            panelA.Hide();
+            listPanel[0].Visible = true;
+            listPanel[1].Visible = false;
+            listPanel[2].Visible = false;
+            listPanel[3].Visible = false;
         }
 
 
@@ -114,8 +122,10 @@ namespace Design_Dashboard_Modern
 
         private void HistorialButton_Click_1(object sender, EventArgs e)
         {
-            PanelHis.Show();
-            panelA.Hide();
+            listPanel[0].Visible = true;
+            listPanel[1].Visible = true;
+            listPanel[2].Visible = false;
+            listPanel[3].Visible = false;
         }
 
         private void PanelMain_Paint(object sender, PaintEventArgs e)
@@ -144,8 +154,10 @@ namespace Design_Dashboard_Modern
 
         private void AdeudosButton_Click(object sender, EventArgs e)
         {
-            panelA.Show();
-            panelConsults.Hide();
+            listPanel[0].Visible = true;
+            listPanel[1].Visible = true;
+            listPanel[2].Visible = true;
+            listPanel[3].Visible = false;
         }
 
         private void ButtonAddDeuda_Click(object sender, EventArgs e)
@@ -168,7 +180,10 @@ namespace Design_Dashboard_Modern
 
         private void ConsultasButton_Click(object sender, EventArgs e)
         {
-            panelConsults.Show();
+            listPanel[0].Visible = true;
+            listPanel[1].Visible = true;
+            listPanel[2].Visible = true;
+            listPanel[3].Visible = true;
         }
 
         private void NewPatientButton_Click(object sender, EventArgs e)
@@ -177,6 +192,21 @@ namespace Design_Dashboard_Modern
             addPatient.Owner = this;
             NewPatientButton.Enabled = false;
             addPatient.Show();
+        }
+
+        private void DataGridViewConsults_Load(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DataGridViewConsults_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PanelConsults_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

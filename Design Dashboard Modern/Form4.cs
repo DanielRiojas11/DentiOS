@@ -26,5 +26,10 @@ namespace Design_Dashboard_Modern
             (this.Owner as Form1).NewPatientButton.Enabled = true;
             Hide();
         }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

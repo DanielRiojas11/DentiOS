@@ -30,23 +30,27 @@
         {
             this.panelTopAddPat = new System.Windows.Forms.Panel();
             this.panelMainAddPatient = new System.Windows.Forms.Panel();
-            this.labelNameAddP = new System.Windows.Forms.Label();
-            this.labelBirthDayAddP = new System.Windows.Forms.Label();
-            this.labelRFCAddP = new System.Windows.Forms.Label();
-            this.labelEMailAddP = new System.Windows.Forms.Label();
-            this.labelAddPPhone = new System.Windows.Forms.Label();
-            this.labelAddPRecomenderBy = new System.Windows.Forms.Label();
-            this.labelAddPEtiology = new System.Windows.Forms.Label();
-            this.labelAddPMedicAlerts = new System.Windows.Forms.Label();
-            this.textBoxNameAddP = new System.Windows.Forms.TextBox();
-            this.textBoxRFCAddP = new System.Windows.Forms.TextBox();
-            this.textBoxEmailAddP = new System.Windows.Forms.TextBox();
-            this.textBoxPhoneAddP = new System.Windows.Forms.TextBox();
-            this.textBoxRecomendedbyAddP = new System.Windows.Forms.TextBox();
-            this.textBoxEtiolofyAddP = new System.Windows.Forms.TextBox();
-            this.textBoxMedicAlertsAddP = new System.Windows.Forms.TextBox();
-            this.dateTimePickerAddP = new System.Windows.Forms.DateTimePicker();
             this.buttonAddP = new System.Windows.Forms.Button();
+            this.dateTimePickerAddP = new System.Windows.Forms.DateTimePicker();
+            this.textBoxMedicAlertsAddP = new System.Windows.Forms.TextBox();
+            this.textBoxEtiolofyAddP = new System.Windows.Forms.TextBox();
+            this.textBoxRecomendedbyAddP = new System.Windows.Forms.TextBox();
+            this.textBoxPhoneAddP = new System.Windows.Forms.TextBox();
+            this.textBoxEmailAddP = new System.Windows.Forms.TextBox();
+            this.textBoxRFCAddP = new System.Windows.Forms.TextBox();
+            this.textBoxNameAddP = new System.Windows.Forms.TextBox();
+            this.labelAddPMedicAlerts = new System.Windows.Forms.Label();
+            this.labelAddPEtiology = new System.Windows.Forms.Label();
+            this.labelAddPRecomenderBy = new System.Windows.Forms.Label();
+            this.labelAddPPhone = new System.Windows.Forms.Label();
+            this.labelEMailAddP = new System.Windows.Forms.Label();
+            this.labelRFCAddP = new System.Windows.Forms.Label();
+            this.labelBirthDayAddP = new System.Windows.Forms.Label();
+            this.labelNameAddP = new System.Windows.Forms.Label();
+            this.labelAPAddP = new System.Windows.Forms.Label();
+            this.textBoxAPAssP = new System.Windows.Forms.TextBox();
+            this.labelAMAddP = new System.Windows.Forms.Label();
+            this.textBoxAMAddP = new System.Windows.Forms.TextBox();
             this.panelMainAddPatient.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +66,10 @@
             // panelMainAddPatient
             // 
             this.panelMainAddPatient.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panelMainAddPatient.Controls.Add(this.textBoxAMAddP);
+            this.panelMainAddPatient.Controls.Add(this.labelAMAddP);
+            this.panelMainAddPatient.Controls.Add(this.textBoxAPAssP);
+            this.panelMainAddPatient.Controls.Add(this.labelAPAddP);
             this.panelMainAddPatient.Controls.Add(this.buttonAddP);
             this.panelMainAddPatient.Controls.Add(this.dateTimePickerAddP);
             this.panelMainAddPatient.Controls.Add(this.textBoxMedicAlertsAddP);
@@ -85,68 +93,74 @@
             this.panelMainAddPatient.Size = new System.Drawing.Size(800, 386);
             this.panelMainAddPatient.TabIndex = 1;
             // 
-            // labelNameAddP
+            // buttonAddP
             // 
-            this.labelNameAddP.AutoSize = true;
-            this.labelNameAddP.Location = new System.Drawing.Point(94, 25);
-            this.labelNameAddP.Name = "labelNameAddP";
-            this.labelNameAddP.Size = new System.Drawing.Size(47, 13);
-            this.labelNameAddP.TabIndex = 0;
-            this.labelNameAddP.Text = "Nombre:";
+            this.buttonAddP.Location = new System.Drawing.Point(713, 351);
+            this.buttonAddP.Name = "buttonAddP";
+            this.buttonAddP.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddP.TabIndex = 17;
+            this.buttonAddP.Text = "Agregar";
+            this.buttonAddP.UseVisualStyleBackColor = true;
+            this.buttonAddP.Click += new System.EventHandler(this.ButtonAddP_Click);
             // 
-            // labelBirthDayAddP
+            // dateTimePickerAddP
             // 
-            this.labelBirthDayAddP.AutoSize = true;
-            this.labelBirthDayAddP.Location = new System.Drawing.Point(94, 63);
-            this.labelBirthDayAddP.Name = "labelBirthDayAddP";
-            this.labelBirthDayAddP.Size = new System.Drawing.Size(111, 13);
-            this.labelBirthDayAddP.TabIndex = 1;
-            this.labelBirthDayAddP.Text = "Fecha de Nacimiento:";
+            this.dateTimePickerAddP.Location = new System.Drawing.Point(211, 57);
+            this.dateTimePickerAddP.Name = "dateTimePickerAddP";
+            this.dateTimePickerAddP.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAddP.TabIndex = 16;
             // 
-            // labelRFCAddP
+            // textBoxMedicAlertsAddP
             // 
-            this.labelRFCAddP.AutoSize = true;
-            this.labelRFCAddP.Location = new System.Drawing.Point(94, 92);
-            this.labelRFCAddP.Name = "labelRFCAddP";
-            this.labelRFCAddP.Size = new System.Drawing.Size(31, 13);
-            this.labelRFCAddP.TabIndex = 2;
-            this.labelRFCAddP.Text = "RFC:";
+            this.textBoxMedicAlertsAddP.Location = new System.Drawing.Point(184, 288);
+            this.textBoxMedicAlertsAddP.Multiline = true;
+            this.textBoxMedicAlertsAddP.Name = "textBoxMedicAlertsAddP";
+            this.textBoxMedicAlertsAddP.Size = new System.Drawing.Size(470, 66);
+            this.textBoxMedicAlertsAddP.TabIndex = 15;
             // 
-            // labelEMailAddP
+            // textBoxEtiolofyAddP
             // 
-            this.labelEMailAddP.AutoSize = true;
-            this.labelEMailAddP.Location = new System.Drawing.Point(94, 124);
-            this.labelEMailAddP.Name = "labelEMailAddP";
-            this.labelEMailAddP.Size = new System.Drawing.Size(35, 13);
-            this.labelEMailAddP.TabIndex = 3;
-            this.labelEMailAddP.Text = "Email:";
+            this.textBoxEtiolofyAddP.Location = new System.Drawing.Point(154, 225);
+            this.textBoxEtiolofyAddP.Multiline = true;
+            this.textBoxEtiolofyAddP.Name = "textBoxEtiolofyAddP";
+            this.textBoxEtiolofyAddP.Size = new System.Drawing.Size(415, 46);
+            this.textBoxEtiolofyAddP.TabIndex = 14;
             // 
-            // labelAddPPhone
+            // textBoxRecomendedbyAddP
             // 
-            this.labelAddPPhone.AutoSize = true;
-            this.labelAddPPhone.Location = new System.Drawing.Point(94, 155);
-            this.labelAddPPhone.Name = "labelAddPPhone";
-            this.labelAddPPhone.Size = new System.Drawing.Size(52, 13);
-            this.labelAddPPhone.TabIndex = 4;
-            this.labelAddPPhone.Text = "Telefono:";
+            this.textBoxRecomendedbyAddP.Location = new System.Drawing.Point(198, 191);
+            this.textBoxRecomendedbyAddP.Name = "textBoxRecomendedbyAddP";
+            this.textBoxRecomendedbyAddP.Size = new System.Drawing.Size(371, 20);
+            this.textBoxRecomendedbyAddP.TabIndex = 13;
+            this.textBoxRecomendedbyAddP.TextChanged += new System.EventHandler(this.TextBoxRecomendedbyAddP_TextChanged);
             // 
-            // labelAddPRecomenderBy
+            // textBoxPhoneAddP
             // 
-            this.labelAddPRecomenderBy.AutoSize = true;
-            this.labelAddPRecomenderBy.Location = new System.Drawing.Point(94, 191);
-            this.labelAddPRecomenderBy.Name = "labelAddPRecomenderBy";
-            this.labelAddPRecomenderBy.Size = new System.Drawing.Size(98, 13);
-            this.labelAddPRecomenderBy.TabIndex = 5;
-            this.labelAddPRecomenderBy.Text = "Recomendado por:";
+            this.textBoxPhoneAddP.Location = new System.Drawing.Point(154, 152);
+            this.textBoxPhoneAddP.Name = "textBoxPhoneAddP";
+            this.textBoxPhoneAddP.Size = new System.Drawing.Size(135, 20);
+            this.textBoxPhoneAddP.TabIndex = 12;
             // 
-            // labelAddPEtiology
+            // textBoxEmailAddP
             // 
-            this.labelAddPEtiology.AutoSize = true;
-            this.labelAddPEtiology.Location = new System.Drawing.Point(94, 232);
-            this.labelAddPEtiology.Name = "labelAddPEtiology";
-            this.labelAddPEtiology.Size = new System.Drawing.Size(50, 13);
-            this.labelAddPEtiology.TabIndex = 6;
-            this.labelAddPEtiology.Text = "Etiologia:";
+            this.textBoxEmailAddP.Location = new System.Drawing.Point(154, 121);
+            this.textBoxEmailAddP.Name = "textBoxEmailAddP";
+            this.textBoxEmailAddP.Size = new System.Drawing.Size(298, 20);
+            this.textBoxEmailAddP.TabIndex = 11;
+            // 
+            // textBoxRFCAddP
+            // 
+            this.textBoxRFCAddP.Location = new System.Drawing.Point(154, 89);
+            this.textBoxRFCAddP.Name = "textBoxRFCAddP";
+            this.textBoxRFCAddP.Size = new System.Drawing.Size(165, 20);
+            this.textBoxRFCAddP.TabIndex = 9;
+            // 
+            // textBoxNameAddP
+            // 
+            this.textBoxNameAddP.Location = new System.Drawing.Point(147, 18);
+            this.textBoxNameAddP.Name = "textBoxNameAddP";
+            this.textBoxNameAddP.Size = new System.Drawing.Size(229, 20);
+            this.textBoxNameAddP.TabIndex = 8;
             // 
             // labelAddPMedicAlerts
             // 
@@ -157,74 +171,101 @@
             this.labelAddPMedicAlerts.TabIndex = 7;
             this.labelAddPMedicAlerts.Text = "Alertas medicas:";
             // 
-            // textBoxNameAddP
+            // labelAddPEtiology
             // 
-            this.textBoxNameAddP.Location = new System.Drawing.Point(147, 18);
-            this.textBoxNameAddP.Name = "textBoxNameAddP";
-            this.textBoxNameAddP.Size = new System.Drawing.Size(507, 20);
-            this.textBoxNameAddP.TabIndex = 8;
+            this.labelAddPEtiology.AutoSize = true;
+            this.labelAddPEtiology.Location = new System.Drawing.Point(94, 232);
+            this.labelAddPEtiology.Name = "labelAddPEtiology";
+            this.labelAddPEtiology.Size = new System.Drawing.Size(50, 13);
+            this.labelAddPEtiology.TabIndex = 6;
+            this.labelAddPEtiology.Text = "Etiologia:";
             // 
-            // textBoxRFCAddP
+            // labelAddPRecomenderBy
             // 
-            this.textBoxRFCAddP.Location = new System.Drawing.Point(154, 89);
-            this.textBoxRFCAddP.Name = "textBoxRFCAddP";
-            this.textBoxRFCAddP.Size = new System.Drawing.Size(165, 20);
-            this.textBoxRFCAddP.TabIndex = 9;
+            this.labelAddPRecomenderBy.AutoSize = true;
+            this.labelAddPRecomenderBy.Location = new System.Drawing.Point(94, 191);
+            this.labelAddPRecomenderBy.Name = "labelAddPRecomenderBy";
+            this.labelAddPRecomenderBy.Size = new System.Drawing.Size(98, 13);
+            this.labelAddPRecomenderBy.TabIndex = 5;
+            this.labelAddPRecomenderBy.Text = "Recomendado por:";
             // 
-            // textBoxEmailAddP
+            // labelAddPPhone
             // 
-            this.textBoxEmailAddP.Location = new System.Drawing.Point(154, 121);
-            this.textBoxEmailAddP.Name = "textBoxEmailAddP";
-            this.textBoxEmailAddP.Size = new System.Drawing.Size(298, 20);
-            this.textBoxEmailAddP.TabIndex = 11;
+            this.labelAddPPhone.AutoSize = true;
+            this.labelAddPPhone.Location = new System.Drawing.Point(94, 155);
+            this.labelAddPPhone.Name = "labelAddPPhone";
+            this.labelAddPPhone.Size = new System.Drawing.Size(52, 13);
+            this.labelAddPPhone.TabIndex = 4;
+            this.labelAddPPhone.Text = "Telefono:";
             // 
-            // textBoxPhoneAddP
+            // labelEMailAddP
             // 
-            this.textBoxPhoneAddP.Location = new System.Drawing.Point(154, 152);
-            this.textBoxPhoneAddP.Name = "textBoxPhoneAddP";
-            this.textBoxPhoneAddP.Size = new System.Drawing.Size(135, 20);
-            this.textBoxPhoneAddP.TabIndex = 12;
+            this.labelEMailAddP.AutoSize = true;
+            this.labelEMailAddP.Location = new System.Drawing.Point(94, 124);
+            this.labelEMailAddP.Name = "labelEMailAddP";
+            this.labelEMailAddP.Size = new System.Drawing.Size(35, 13);
+            this.labelEMailAddP.TabIndex = 3;
+            this.labelEMailAddP.Text = "Email:";
             // 
-            // textBoxRecomendedbyAddP
+            // labelRFCAddP
             // 
-            this.textBoxRecomendedbyAddP.Location = new System.Drawing.Point(198, 191);
-            this.textBoxRecomendedbyAddP.Name = "textBoxRecomendedbyAddP";
-            this.textBoxRecomendedbyAddP.Size = new System.Drawing.Size(371, 20);
-            this.textBoxRecomendedbyAddP.TabIndex = 13;
-            this.textBoxRecomendedbyAddP.TextChanged += new System.EventHandler(this.TextBoxRecomendedbyAddP_TextChanged);
+            this.labelRFCAddP.AutoSize = true;
+            this.labelRFCAddP.Location = new System.Drawing.Point(94, 92);
+            this.labelRFCAddP.Name = "labelRFCAddP";
+            this.labelRFCAddP.Size = new System.Drawing.Size(31, 13);
+            this.labelRFCAddP.TabIndex = 2;
+            this.labelRFCAddP.Text = "RFC:";
             // 
-            // textBoxEtiolofyAddP
+            // labelBirthDayAddP
             // 
-            this.textBoxEtiolofyAddP.Location = new System.Drawing.Point(154, 225);
-            this.textBoxEtiolofyAddP.Multiline = true;
-            this.textBoxEtiolofyAddP.Name = "textBoxEtiolofyAddP";
-            this.textBoxEtiolofyAddP.Size = new System.Drawing.Size(415, 46);
-            this.textBoxEtiolofyAddP.TabIndex = 14;
+            this.labelBirthDayAddP.AutoSize = true;
+            this.labelBirthDayAddP.Location = new System.Drawing.Point(94, 63);
+            this.labelBirthDayAddP.Name = "labelBirthDayAddP";
+            this.labelBirthDayAddP.Size = new System.Drawing.Size(111, 13);
+            this.labelBirthDayAddP.TabIndex = 1;
+            this.labelBirthDayAddP.Text = "Fecha de Nacimiento:";
             // 
-            // textBoxMedicAlertsAddP
+            // labelNameAddP
             // 
-            this.textBoxMedicAlertsAddP.Location = new System.Drawing.Point(184, 288);
-            this.textBoxMedicAlertsAddP.Multiline = true;
-            this.textBoxMedicAlertsAddP.Name = "textBoxMedicAlertsAddP";
-            this.textBoxMedicAlertsAddP.Size = new System.Drawing.Size(470, 66);
-            this.textBoxMedicAlertsAddP.TabIndex = 15;
+            this.labelNameAddP.AutoSize = true;
+            this.labelNameAddP.Location = new System.Drawing.Point(94, 25);
+            this.labelNameAddP.Name = "labelNameAddP";
+            this.labelNameAddP.Size = new System.Drawing.Size(58, 13);
+            this.labelNameAddP.TabIndex = 0;
+            this.labelNameAddP.Text = "Nombre(s):";
             // 
-            // dateTimePickerAddP
+            // labelAPAddP
             // 
-            this.dateTimePickerAddP.Location = new System.Drawing.Point(211, 57);
-            this.dateTimePickerAddP.Name = "dateTimePickerAddP";
-            this.dateTimePickerAddP.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerAddP.TabIndex = 16;
+            this.labelAPAddP.AutoSize = true;
+            this.labelAPAddP.Location = new System.Drawing.Point(382, 25);
+            this.labelAPAddP.Name = "labelAPAddP";
+            this.labelAPAddP.Size = new System.Drawing.Size(24, 13);
+            this.labelAPAddP.TabIndex = 18;
+            this.labelAPAddP.Text = "AP:";
             // 
-            // buttonAddP
+            // textBoxAPAssP
             // 
-            this.buttonAddP.Location = new System.Drawing.Point(713, 351);
-            this.buttonAddP.Name = "buttonAddP";
-            this.buttonAddP.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddP.TabIndex = 17;
-            this.buttonAddP.Text = "Agregar";
-            this.buttonAddP.UseVisualStyleBackColor = true;
-            this.buttonAddP.Click += new System.EventHandler(this.ButtonAddP_Click);
+            this.textBoxAPAssP.Location = new System.Drawing.Point(403, 18);
+            this.textBoxAPAssP.Name = "textBoxAPAssP";
+            this.textBoxAPAssP.Size = new System.Drawing.Size(122, 20);
+            this.textBoxAPAssP.TabIndex = 19;
+            // 
+            // labelAMAddP
+            // 
+            this.labelAMAddP.AutoSize = true;
+            this.labelAMAddP.Location = new System.Drawing.Point(531, 25);
+            this.labelAMAddP.Name = "labelAMAddP";
+            this.labelAMAddP.Size = new System.Drawing.Size(26, 13);
+            this.labelAMAddP.TabIndex = 20;
+            this.labelAMAddP.Text = "AM:";
+            // 
+            // textBoxAMAddP
+            // 
+            this.textBoxAMAddP.Location = new System.Drawing.Point(554, 18);
+            this.textBoxAMAddP.Name = "textBoxAMAddP";
+            this.textBoxAMAddP.Size = new System.Drawing.Size(122, 20);
+            this.textBoxAMAddP.TabIndex = 21;
+            this.textBoxAMAddP.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // AddPatient
             // 
@@ -264,5 +305,9 @@
         private System.Windows.Forms.Label labelNameAddP;
         private System.Windows.Forms.Button buttonAddP;
         private System.Windows.Forms.DateTimePicker dateTimePickerAddP;
+        private System.Windows.Forms.TextBox textBoxAMAddP;
+        private System.Windows.Forms.Label labelAMAddP;
+        private System.Windows.Forms.TextBox textBoxAPAssP;
+        private System.Windows.Forms.Label labelAPAddP;
     }
 }
